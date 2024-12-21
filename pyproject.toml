@@ -18,7 +18,8 @@ dependencies = [
     "matplotlib>=3.9.2",
     "osmnx>=2.0.0",
     "pandas==2.2.3",
-    "pyogrio>=0.10.0",
+    "pyogrio>=1.10.0",
+    "jupyterlab"
 ]
 
 [project.optional-dependencies]

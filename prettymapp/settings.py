@@ -1,15 +1,34 @@
 LANDCOVER_CLASSES = {
-    "urban": {"building": True, "landuse": ["construction", "commercial"]},
+    "nature":{"natural":["wetland","bare_rock","heath","scrub","shrub"]},
+    "urban": {
+        "building": True,
+        "landuse": ["construction", "commercial"],
+        "place":["village","hamlet","town"],
+    },
     "water": {
         "natural": ["water", "bay"],
         "place": ["sea"],
+        "water":["lake"],
         "leisure": ["swimming_pool"],
     },
-    "woodland": {"landuse": ["forest"]},
+    "woodland": {
+        "landuse": ["forest", "orchard"],
+        "natural":["wood"],
+        "boundary":["national_park"]
+    },
     "grassland": {
         "landuse": ["grass", "vineyard", "orchard", "village_green"],
-        "natural": ["island", "wood"],
+        "natural": ["grassland"],
         "leisure": ["park", "pitch", "garden", "golf_course"],
+    },
+    "farmland":{
+        "landuse":["farmland","farmyard"], "place":["farm"]
+    },
+    "beach":{
+        "natural":["beach", "sand"],
+    },
+    "islands":{
+        "place":["island","islet"],
     },
     "streets": {
         "highway": [
@@ -27,7 +46,7 @@ LANDCOVER_CLASSES = {
         ],
         "railway": True,
     },
-    "other": {"amenity": ["parking"], "man_made": ["pier"], "highway": ["pedestrian"]},
+    "other": {"amenity": ["parking"], "man_made": ["pier"], "highway": ["pedestrian"], "landuse":["quarry"]},
 }
 
 # Contains drawing settings
@@ -49,8 +68,13 @@ STYLES = {
         },
         "grassland": {"fc": "#D0F1BF", "ec": "#2F3737", "lw": 1, "zorder": 2},
         "woodland": {"fc": "#64B96A", "ec": "#2F3737", "lw": 1, "zorder": 2},
+        "farmland":{ "fc": "#00FFFF", "ec": "#00AAAA", "lw":1, "zorder":2},
+        "nature": { "fc": "#FF0000", "ec": "#AA0000", "lw":1, "zorder":2},
+        "islands": { "fc": "#FFFFFF", "ec": "#AAAAAA", "lw":1, "zorder":1},
+        "beach": { "fc": "#FFFF00", "ec": "#AAAA00", "lw":1, "zorder":2},
         "streets": {"fc": "#2F3737", "zorder": 3},
         "other": {"fc": "#F2F4CB", "ec": "#2F3737", "lw": 1, "zorder": 3},
+
     },
     "Auburn": { # e.g. Barcelona
         "urban": {
