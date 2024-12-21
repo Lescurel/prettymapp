@@ -50,12 +50,14 @@ LANDCOVER_CLASSES = {
 }
 
 # Contains drawing settings
+
+# https://colormagic.app/palette/6766d952be680a86c6260075
 STYLES = {
     "Peach": { # e.g. Macau
         "urban": {
             "cmap": ["#FFC857", "#E9724C", "#C5283D"],
             "ec": "#2F3737",
-            "lw": 0.5,
+            "lw": 0.001,
             "zorder": 4,
         },
         "water": {
@@ -66,12 +68,19 @@ STYLES = {
             "lw": 1,
             "zorder": 1,
         },
-        "grassland": {"fc": "#D0F1BF", "ec": "#2F3737", "lw": 1, "zorder": 2},
-        "woodland": {"fc": "#64B96A", "ec": "#2F3737", "lw": 1, "zorder": 2},
-        "farmland":{ "fc": "#00FFFF", "ec": "#00AAAA", "lw":1, "zorder":2},
-        "nature": { "fc": "#FF0000", "ec": "#AA0000", "lw":1, "zorder":2},
-        "islands": { "fc": "#FFFFFF", "ec": "#AAAAAA", "lw":1, "zorder":1},
-        "beach": { "fc": "#FFFF00", "ec": "#AAAA00", "lw":1, "zorder":2},
+        "grassland": {"fc": "#a6c851", "ec": "#2F3737", "lw": 0.1, "zorder": 2},
+        "woodland": {"fc": "#4b8f3d", "ec": "#2F3737", "lw": 0.1, "zorder": 2},
+        "farmland":{ "fc": "#f1c45b", "ec": "#2f3737", "lw":0.1, "zorder":2},
+        "nature": { "fc": "#e2d9a6", "ec": "#2f3737", "lw":0.1, "zorder":2},
+        "islands": {
+            "fc": "#f2f4cb",
+            "ec": "#ffe37a",
+            "hatch": "ooo...",
+            "hatch_c": "#2F3737",
+            "lw":0.1,
+            "zorder":1
+        },
+        "beach": { "fc": "#e3b82b", "ec": "#2f3737", "lw":0.1, "zorder":2},
         "streets": {"fc": "#2F3737", "zorder": 3},
         "other": {"fc": "#F2F4CB", "ec": "#2F3737", "lw": 1, "zorder": 3},
 
@@ -157,7 +166,7 @@ STYLES = {
     },
 }
 
-STREETS_WIDTH = {
+STREETS_WIDTH = {k:0.1*v for k,v in {
     "motorway": 4,
     "trunk": 4,
     "primary": 3.5,
@@ -173,4 +182,4 @@ STREETS_WIDTH = {
     "unclassified": 1.5,
     "pedestrian": 1.5,
     "footway": 0.7,
-}
+}.items()}
