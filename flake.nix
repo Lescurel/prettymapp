@@ -37,7 +37,7 @@
 
         in
         # Create a devShell like normal.
-        pkgs.mkShell { packages = [ pythonEnv pkgs.vscode]; };
+        pkgs.mkShell { packages = [ pythonEnv ]; };
         
       # Build our package using `buildPythonPackage
       packages.x86_64-linux.default =
