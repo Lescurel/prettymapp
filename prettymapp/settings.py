@@ -1,5 +1,6 @@
 LANDCOVER_CLASSES = {
-    "nature":{"natural":["wetland","bare_rock","heath","scrub","shrub"]},
+    "nature":{"natural":["bare_rock","heath","scrub","shrub"]},
+    "swamp":{"natural":["wetland"]},
     "urban": {
         "building": True,
         "landuse": ["construction", "commercial"],
@@ -52,6 +53,7 @@ LANDCOVER_CLASSES = {
 # Contains drawing settings
 
 # https://colormagic.app/palette/6766d952be680a86c6260075
+# fields: https://colormagic.app/palette/6766f65cbe680a86c626062d
 STYLES = {
     "Peach": { # e.g. Macau
         "urban": {
@@ -65,24 +67,37 @@ STYLES = {
             "ec": "#85c9e6",
             "hatch": "ooo...",
             "hatch_c": "#2F3737",
-            "lw": 1,
-            "zorder": 1,
+            "lw": 0.01,
+            "zorder": 2,
+        },
+        "swamp": {
+            "fc": "#a1e3ff",
+            "ec": "#85c9e6",
+            # "hatch": "---",
+            # "hatch_c": "#2F3737",
+            "lw": 0.1,
+            "zorder": 2,
         },
         "grassland": {"fc": "#a6c851", "ec": "#2F3737", "lw": 0.1, "zorder": 2},
         "woodland": {"fc": "#4b8f3d", "ec": "#2F3737", "lw": 0.1, "zorder": 2},
-        "farmland":{ "fc": "#f1c45b", "ec": "#2f3737", "lw":0.1, "zorder":2},
+        "farmland":{
+            "cmap": ["#f1c45b","#e1b44c","#d5a84d"],
+            "ec": "#2f3737",
+            "lw":0.1,
+            "zorder":2
+        },
         "nature": { "fc": "#e2d9a6", "ec": "#2f3737", "lw":0.1, "zorder":2},
         "islands": {
-            "fc": "#f2f4cb",
-            "ec": "#ffe37a",
+            "fc": "#c6d78e",
+            "ec": "#a8c253",
             "hatch": "ooo...",
             "hatch_c": "#2F3737",
-            "lw":0.1,
+            "lw":0.01,
             "zorder":1
         },
         "beach": { "fc": "#e3b82b", "ec": "#2f3737", "lw":0.1, "zorder":2},
         "streets": {"fc": "#2F3737", "zorder": 3},
-        "other": {"fc": "#F2F4CB", "ec": "#2F3737", "lw": 1, "zorder": 3},
+        "other": {"fc": "#F2F4CB", "ec": "#2F3737", "lw": 0.1, "zorder": 3},
 
     },
     "Auburn": { # e.g. Barcelona
